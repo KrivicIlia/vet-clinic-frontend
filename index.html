@@ -11,7 +11,7 @@
   
   <!-- VK API -->
 <script src="https://vk.com/js/api/openapi.js?169" type="text/javascript"></script>
-</head>
+</head> 
 <body>
 
   <!-- COOKIE УВЕДОМЛЕНИЕ -->
@@ -27,11 +27,12 @@
   <header class="header">
     <div class="container header-container">
       <div class="logo-wrapper">
-        <img src="images/logo_color.svg" alt="Добрый Доктор" class="logo" onerror="this.src='https://via.placeholder.com/50x50?text=DD'">
+        <img src="images/logo_color.svg" alt="Добрый Доктор" class="logo">
         <span class="logo-text">Добрый Доктор</span>
       </div>
       <nav class="nav">
         <a href="#about" class="nav-link">О нас</a>
+        <a href="#services" class="nav-link">Услуги</a>
         <a href="#staff" class="nav-link">Сотрудники</a>
         <a href="#patients" class="nav-link">Пациентам</a>
         <a href="#reviews" class="nav-link">Отзывы</a>
@@ -167,7 +168,7 @@
     <div class="staff-grid">
       
       <!-- Главный врач: Тарасова Дарья Вячеславовна -->
-      <div class="staff-card" data-modal="modal1">
+      <div class="staff-card">
         <div class="staff-img-wrapper">
           <img src="images/tarasova.jpg" alt="Тарасова Дарья Вячеславовна" class="staff-img" onerror="this.src='https://via.placeholder.com/200x200?text=Тарасова'">
         </div>
@@ -177,7 +178,7 @@
       </div>
 
       <!-- Врач: Киселева Алена Александровна -->
-      <div class="staff-card" data-modal="modal2">
+      <div class="staff-card">
         <div class="staff-img-wrapper">
           <img src="images/kiseleva.jpg" alt="Киселева Алена Александровна" class="staff-img" onerror="this.src='https://via.placeholder.com/200x200?text=Киселева'">
         </div>
@@ -187,7 +188,7 @@
       </div>
 
       <!-- Врач: Шадт Виктория Юрьевна -->
-      <div class="staff-card" data-modal="modal3">
+      <div class="staff-card">
         <div class="staff-img-wrapper">
           <img src="images/shadrt.jpg" alt="Шадт Виктория Юрьевна" class="staff-img" onerror="this.src='https://via.placeholder.com/200x200?text=Шадт'">
         </div>
@@ -200,34 +201,30 @@
   </div>
 </section>
 
-  <!-- ПАЦИЕНТАМ (подразделы) -->
-  <section id="patients" class="patients">
-    <div class="container">
-      <h2 class="section-title">Пациентам</h2>
-      <div class="patients-grid">
-        <button class="patient-card" data-modal="modalControl">
-          <img src="images/document.svg" alt="Документ" class="patient-icon">
-          <span>Контролирующие органы</span>
-        </button>
-        <button class="patient-card" data-modal="modalMemo">
-          <img src="images/info.svg" alt="Инфо" class="patient-icon">
-          <span>Памятка для владельца</span>
-        </button>
-        <button class="patient-card" data-modal="modalRules">
-          <img src="images/file.svg" alt="Правила" class="patient-icon">
-          <span>Правила оказания услуг</span>
-        </button>
-        <button class="patient-card" data-modal="modalPreparation">
-          <img src="images/preparation.svg" alt="Подготовка" class="patient-icon">
-          <span>Подготовка пациентов</span>
-        </button>
-        <button class="patient-card" data-modal="modalPayment">
-          <img src="images/payment.svg" alt="Оплата" class="patient-icon">
-          <span>Порядок оплаты</span>
-        </button>
-      </div>
+<!-- ПАЦИЕНТАМ (подразделы) -->
+<section id="patients" class="patients">
+  <div class="container">
+    <h2 class="section-title">Пациентам</h2>
+    <div class="patients-grid">
+      <button class="patient-card" data-modal="modalControl">
+        <img src="images/document.svg" alt="Документ" class="patient-icon">
+        <span>Контролирующие органы</span>
+      </button>
+      <button class="patient-card" data-modal="modalMemo">
+        <img src="images/info.svg" alt="Инфо" class="patient-icon">
+        <span>Памятка владельцу и подготовка пациентов</span>
+      </button>
+      <button class="patient-card" data-modal="modalRules">
+        <img src="images/file.svg" alt="Правила" class="patient-icon">
+        <span>Правила оказания услуг</span>
+      </button>
+      <button class="patient-card" data-modal="modalPreparation">
+        <img src="images/check.svg" alt="Подготовка" class="patient-icon">
+        <span>Правила размещения в стационаре</span>
+      </button>
     </div>
-  </section>
+  </div>
+</section>  
 
   <!-- ОТЗЫВЫ -->
   <section id="reviews" class="reviews">
@@ -353,84 +350,113 @@
 <!-- Контейнер для кнопки авторизации VK (скрыт по умолчанию) -->
 <div id="vk_auth" style="display: none;"></div>
 
-  <!-- КНОПКА ЧАТ-БОТА (правый нижний угол, ТЗ) -->
+  <!-- КНОПКА ЧАТ-БОТА -->
   <div class="chat-button" id="chatButton">
     <img src="images/chat.svg" alt="Чат" class="chat-icon">
   </div>
 
-  <!-- ========== ВСЕ МОДАЛЬНЫЕ ОКНА ========== -->
-
- <!-- Модалка для Тарасовой Дарьи Вячеславовны -->
-<div class="modal" id="modal1">
-  <div class="modal-content">
-    <span class="close"><img src="images/close.svg" alt="×" class="close-icon"></span>
-    <h3><img src="images/heart.svg" alt="Главный врач" class="modal-icon"> Тарасова Дарья Вячеславовна</h3>
-    <p><strong>Главный врач, ветеринарный терапевт, хирург</strong></p>
-    <p>Стаж 15 лет. Окончила Уральскую государственную академию ветеринарной медицины (УрГАВМ).</p>
-    <p>Специализируется на терапии мелких домашних животных, хирургии, УЗИ-диагностике. Постоянно повышает квалификацию на российских и международных конференциях.</p>
-    <p><img src="images/calendar.svg" alt="Календарь" class="modal-icon"> Приём: Пн-Сб 10:00-17:00</p>
-  </div>
-</div>
-
-<!-- Модалка для Киселевой Алены Александровны -->
-<div class="modal" id="modal2">
-  <div class="modal-content">
-    <span class="close"><img src="images/close.svg" alt="×" class="close-icon"></span>
-    <h3><img src="images/heart.svg" alt="Врач" class="modal-icon"> Киселева Алена Александровна</h3>
-    <p><strong>Ветеринарный врач-терапевт</strong></p>
-    <p>Стаж 8 лет. Окончила Уральскую государственную академию ветеринарной медицины (УрГАВМ).</p>
-    <p>Специализируется на терапии, дерматологии, лечении грызунов, птиц и экзотических животных.</p>
-    <p><img src="images/calendar.svg" alt="Календарь" class="modal-icon"> Приём: Вт-Сб 11:00-18:00</p>
-  </div>
-</div>
-
-<!-- Модалка для Шадт Виктории Юрьевны -->
-<div class="modal" id="modal3">
-  <div class="modal-content">
-    <span class="close"><img src="images/close.svg" alt="×" class="close-icon"></span>
-    <h3><img src="images/heart.svg" alt="Врач" class="modal-icon"> Шадт Виктория Юрьевна</h3>
-    <p><strong>Ветеринарный врач-терапевт</strong></p>
-    <p>Стаж 6 лет. Окончила Уральский государственный аграрный университет (УрГАУ).</p>
-    <p>Специализируется на терапии, кардиологии, лечении кошек и собак. Проводит ЭХО-сердце.</p>
-    <p><img src="images/calendar.svg" alt="Календарь" class="modal-icon"> Приём: Пн-Пт 13:00-19:00, Сб 10:00-14:00</p>
-  </div>
-</div>
-
   <!-- Модалки для раздела "Пациентам" -->
-  <div class="modal" id="modalControl">
-    <div class="modal-content">
-      <span class="close"><img src="images/close.svg" alt="×" class="close-icon"></span>
-      <h3><img src="images/document.svg" alt="Документ" class="modal-icon"> Контролирующие органы</h3>
-      <p>Информация о контролирующих органах будет добавлена после утверждения текста.</p>
+<div class="modal" id="modalControl">
+  <div class="modal-content">
+    <span class="close"><img src="images/close.svg" alt="×" class="close-icon"></span>
+    <h3><img src="images/document.svg" alt="Документ" class="modal-icon"> Контролирующие органы</h3>
+    <p><strong>Контактные данные Роспотребнадзора Управление Федеральной службы по надзору в сфере защиты прав потребителей и благополучия человека по Свердловской области</strong></p>
+    <p>Управление Роспотребнадзора по Свердловской области, расположен по адресу: г. Екатеринбург, ул. 8 Марта, 177а, тел.: +7 (343) 210-94-37</p>
+    <p>В г. Полевском специалист отдела находится по адресу: г. Полевской, ул. Вершинина, 19, тел.: +7 (34350) 4-21-68</p>
+  </div>
+</div>
+<!-- Модалка: Памятка владельцу и подготовка пациентов -->
+<div class="modal" id="modalMemo">
+  <div class="modal-content">
+    <span class="close"><img src="images/close.svg" alt="×" class="close-icon"></span>
+    <h3><img src="images/info.svg" alt="Инфо" class="modal-icon"> Памятка владельцу и подготовка пациентов</h3>
+    
+    <div class="privacy-text">
+      <h4>Памятка для владельца</h4>
+      <p><strong>Перед визитом в клинику:</strong></p>
+      <ul style="margin-left: 20px; margin-bottom: 15px;">
+        <li>Собаки должны быть на поводке и в наморднике</li>
+        <li>Кошек и собак мелких пород перевозите в переносках</li>
+        <li>Возьмите с собой ветеринарный паспорт с отметками о прививках</li>
+        <li>Подготовьте информацию о состоянии питомца: когда началось заболевание, какое лечение уже проводилось, есть ли хронические болезни</li>
+        <li>При первой консультации уточните у врача ориентировочную стоимость лечения и диагностики</li>
+      </ul>
+      
+      <p><strong>Во время приёма:</strong></p>
+      <ul style="margin-left: 20px; margin-bottom: 15px;">
+        <li>Сообщите врачу об аллергических реакциях, если они были</li>
+        <li>Не стесняйтесь задавать вопросы - вы имеете право на полную информацию о здоровье питомца</li>
+        <li>При записи на операцию или сложные процедуры внимательно ознакомьтесь с информированным согласием</li>
+      </ul>
+      
+      <p><strong>Ваши права как потребителя (ст. 8, 10 Закона «О защите прав потребителей»):</strong></p>
+      <ul style="margin-left: 20px; margin-bottom: 15px;">
+        <li>Получать полную и достоверную информацию об услугах, их стоимости и квалификации специалистов</li>
+        <li>Ознакомиться с правилами клиники и прейскурантом цен на информационном стенде</li>
+        <li>Получить договор на оказание ветеринарной помощи и информированные согласия на процедуры</li>
+        <li>В случае спора - обратиться в Роспотребнадзор или в суд</li>
+      </ul>
+      
+      <h4>Подготовка пациентов к процедурам и стационару</h4>
+      <p><strong>Перед помещением в стационар:</strong></p>
+      <ul style="margin-left: 20px; margin-bottom: 15px;">
+        <li>Животное должно быть осмотрено врачом</li>
+        <li>Владелец оформляет информированное согласие на размещение в стационаре</li>
+        <li>В стационар принимаются неагрессивные, спокойные животные с чистой шерстью</li>
+        <li>Собаки принимаются строго в наморднике</li>
+        <li>Вакцинация должна быть проведена не ранее чем за 15 дней и не позднее чем за 1 год до поступления</li>
+        <li>Дегельминтизация - не позднее чем за 15 дней, обработка от эктопаразитов - не позднее чем за 3 дня</li>
+      </ul>
+      
+      <p><strong>Что нужно взять с собой в стационар:</strong></p>
+      <ul style="margin-left: 20px; margin-bottom: 15px;">
+        <li>Корм, наполнитель для туалета, пелёнки (или оплатить расходы клиники на их покупку)</li>
+        <li>Назначенное лечение, лекарственные препараты (если есть)</li>
+        <li>Ветеринарный паспорт с отметками</li>
+        <li>Контактный телефон для связи с врачом</li>
+      </ul>
+      
+      <p><strong>Важно:</strong> Владелец обязан звонить в клинику минимум раз в день для получения информации о состоянии животного. В экстренных случаях врач свяжется с вами самостоятельно.</p>
     </div>
   </div>
-  <div class="modal" id="modalMemo">
-    <div class="modal-content">
-      <span class="close"><img src="images/close.svg" alt="×" class="close-icon"></span>
-      <h3><img src="images/info.svg" alt="Инфо" class="modal-icon"> Памятка для владельца пациента</h3>
-      <p>Текст памятки будет разработан позже.</p>
-    </div>
-  </div>
+</div>
   <div class="modal" id="modalRules">
-    <div class="modal-content">
-      <span class="close"><img src="images/close.svg" alt="×" class="close-icon"></span>
-      <h3><img src="images/document.svg" alt="Правила" class="modal-icon"> Правила оказания услуг</h3>
-      <p>Текст правил будет разработан позже.</p>
+  <div class="modal-content modal-large">
+    <span class="close"><img src="images/close.svg" alt="×" class="close-icon"></span>
+    <h3><img src="images/file.svg" alt="Правила" class="modal-icon"> Правила оказания ветеринарной помощи</h3>
+    <div class="privacy-text">
+      <h4>Общие положения</h4>
+      <p>Работа Клиники осуществляется на основании данных Правил, Федерального закона «О ветеринарии», Правил оказания платных ветеринарных услуг, Федерального закона «О защите прав потребителя» и других законодательных актов РФ и ее субъектов, а также стандартов Национальной ветеринарной палаты.</p>
+      <p>Оказание Ветеринарной помощи регламентируется Договором на оказание ветеринарной помощи, подписанным Клиникой и Владельцем пациента.</p>
+      <p>Настоящие Правила оказания ветеринарной помощи и прейскурант цен Клиники размещены на информационном стенде в холле Клиники.</p>
+      
+      <h4>Правила приема и прохождения лечения Пациентом</h4>
+      <p>Время приёма Пациента не регламентировано, поэтому для тщательного всестороннего его осмотра Владелец пациента должен располагать достаточным запасом времени.</p>
+      <p>Пациенты принимаются в следующем приоритетном порядке: требующие экстренной помощи; пришедшие по предварительной записи.</p>
+      <p>При посещении Клиники по причине другого заболевания прием расценивается как первичный.</p>
+      
+      <h4>Эвтаназия и кремация</h4>
+      <p>Проводится только по показаниям и после прямой просьбы владельца, что обусловлено Этическим Кодексом Ветеринарного врача. Врач вправе отказать в проведении эвтаназии, если ее целесообразность будет сомнительна.</p>
     </div>
   </div>
+</div>
   <div class="modal" id="modalPreparation">
-    <div class="modal-content">
-      <span class="close"><img src="images/close.svg" alt="×" class="close-icon"></span>
-      <h3><img src="images/check.svg" alt="Подготовка" class="modal-icon"> Подготовка пациентов к процедурам</h3>
-      <p>Текст подготовки будет разработан позже.</p>
+  <div class="modal-content modal-large">
+    <span class="close"><img src="images/close.svg" alt="×" class="close-icon"></span>
+    <h3><img src="images/preparation.svg" alt="Подготовка" class="modal-icon"> Правила размещения животного в стационаре</h3>
+    <div class="privacy-text">
+      <h4>Общие положения</h4>
+      <p>Перед помещением в стационар врач осматривает животное.</p>
+      <p>Целью нахождения животного в стационаре может быть прохождение обследования, лечения или подготовки к операции.</p>
+      <p>Владельцем считается лицо, на которого оформлен Договор на оказание ветеринарной помощи.</p>
+      <p>Нахождение в стационаре может быть в условиях дневного стационара (12 часов и меньше) или круглосуточного.</p>
+      <p>В стационар принимаются не агрессивные, спокойные животные, собаки принимаются строго с намордником.</p>
+      
+      <h4>Обязанности сторон</h4>
+      <p><strong>Клиника обязуется:</strong> обеспечить качественное содержание и лечение животного, соблюдать правила гигиены, немедленно сообщать владельцу о любых проблемах.</p>
+      <p><strong>Владелец пациента обязуется:</strong> указать актуальный контактный телефон, оплачивать содержание животного, предоставить корм и необходимые принадлежности, соблюдать сроки нахождения животного в стационаре.</p>
     </div>
   </div>
-  <div class="modal" id="modalPayment">
-    <div class="modal-content">
-      <span class="close"><img src="images/close.svg" alt="×" class="close-icon"></span>
-      <h3><img src="images/payment.svg" alt="Оплата" class="modal-icon"> Порядок оплаты</h3>
-      <p>Текст о порядке оплаты будет разработан позже.</p>
-    </div>
   </div>
 
   <!-- Модалка политики конфиденциальности -->
