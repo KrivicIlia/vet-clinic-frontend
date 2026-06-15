@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.dobrydoctorpolev.ru/sitemap.xml
+
+Disallow: /css/
+Disallow: /js/
+Disallow: /images/
